@@ -27,7 +27,7 @@ public class CustomerController {
 
     @PostMapping
     public String registerCustomer(@ModelAttribute Customer customer, Model model) {
-        customerService.createCustomer(customer);
+        this.customerService.createCustomer(customer);
         model.addAttribute("allCustomers", customerService.getCustomers());
         return "redirect:customer";
     }
