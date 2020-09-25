@@ -14,6 +14,14 @@ public class BankAccount {
     public BankAccount() {
     }
 
+    public void deposit(double amount){
+        this.balance+=amount;
+    }
+
+    public void withdraw(double amount){
+        this.balance-=amount;
+    }
+
     public int getId() {
         return id;
     }

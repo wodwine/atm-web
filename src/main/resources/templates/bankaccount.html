@@ -40,18 +40,18 @@
         </thead>
         <tbody>
         <tr th:each="bankAccount: ${allBankAccount}">
-            <td th:text="${bankAccount.id}"></td>
-            <td th:text="${bankAccount.customerId}"></td>
-            <td th:text="${bankAccount.type}"></td>
-            <td th:text="${bankAccount.balance}"></td>
-            <td>
-                <a th:href="@{/bankaccount/edit/{id}(id=${bankAccount.id})}" class = "btn btn-secondary">Edit</a>
+            <td th:text="${bankAccount.id}" th:width="100"></td>
+            <td th:text="${bankAccount.customerId}" th:width="100"></td>
+            <td th:text="${bankAccount.type}" th:width="300"></td>
+            <td th:text="${bankAccount.balance}" th:width="300"></td>
+            <td th:width="210">
+                <a th:href="@{/bankaccount/deposit/{id}(id=${bankAccount.id})}" class = "btn btn-success">Deposit</a>
+                <a th:href="@{/bankaccount/withdraw/{id}(id=${bankAccount.id})}" class = "btn btn-warning">Withdraw</a>
             </td>
             <td><form th:action="@{/bankaccount/delete/{id}(id=${bankAccount.id})}" method="POST">
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
             </td>
-
         </tr>
         </tbody>
     </table>
