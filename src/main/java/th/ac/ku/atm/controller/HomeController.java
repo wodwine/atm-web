@@ -13,5 +13,12 @@ public class HomeController {
         // return home.html
         return "home";
     }
+
+    @RequestMapping("")
+    public String getFirstPage(Model model) {
+        model.addAttribute("greeting", "Hello there!!");
+        // return home.html
+        return "home";
+    }
 }
 
