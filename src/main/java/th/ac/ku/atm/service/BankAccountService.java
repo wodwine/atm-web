@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 public class BankAccountService {
-    private List<BankAccount> bankAccountList;
+
     private RestTemplate restTemplate;
 
     public BankAccountService(RestTemplate restTemplate) {
@@ -29,15 +29,6 @@ public class BankAccountService {
         BankAccount[] accounts = response.getBody();
 
         return Arrays.asList(accounts);
-    }
-
-    @PostConstruct
-    public void postConstruct() {
-        this.bankAccountList = new ArrayList<>();
-    }
-
-    public void createBankAccount(BankAccount bankAccount) {
-        bankAccountList.add(bankAccount);
     }
 
 
